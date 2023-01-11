@@ -1,7 +1,7 @@
 <br/>
 <p align="center">
   <a href="https://github.com/y0Dev/Theora">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="images/logo_bgwhite.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">React Native Template</h3>
