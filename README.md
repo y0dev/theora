@@ -44,8 +44,6 @@ Here's why I created a template:
 - You shouldn't be doing the same tasks over and over from scratch
 - You should element DRY principles to the rest of your life :smile:
 
-This design was inspired by [React Native Starter Kit Template](https://instamobile.io/app-templates/react-native-starter-kit-firebase/)
-
 ## Built With
 
 This project was built using the [expo-cli](https://docs.expo.dev/workflow/expo-cli/) rather than using react-native client.
@@ -92,3 +90,7 @@ npm install
 ## Author
 
 **Devontae Reid** - _Software Engineer_ - [Devontae Reid](https://www.devontaereid.com/)
+
+## Appreciation/Shoutout 
+This design was inspired by [React Native Starter Kit Template](https://instamobile.io/app-templates/react-native-starter-kit-firebase/)
+Thanks to [Shaan Khan](https://readme.shaankhan.dev/) for creating this readme generation tool
