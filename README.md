@@ -97,6 +97,17 @@ eas build --profile development --platform android
 eas build --profile development-simulator --platform ios
 ```
 
+
+### Debug
+
+Debugging can be found by going to the following page http://localhost:port#/debugger-ui/. 
+
+Check terminal for port number when running 
+
+```sh
+npm run start
+```
+
 ## Contributing
 
 ### Creating A Pull Request
