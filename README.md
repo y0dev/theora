@@ -77,7 +77,13 @@ git clone https://github.com/y0dev/theora.git
 npm install
 ```
 
-3. Build Project
+3. Expo Dependencies
+
+```sh
+npx expo install react-native-screens react-native-safe-area-context
+```
+
+4. Build Project
 
 #### For Android
 
@@ -86,6 +92,7 @@ eas build --profile development --platform android
 ```
 
 #### For iOS
+
 ```sh
 eas build --profile development-simulator --platform ios
 ```
@@ -103,7 +110,6 @@ eas build --profile development-simulator --platform ios
 ## Author
 
 **Devontae Reid** - _Software Engineer_ - [Devontae Reid](https://www.devontaereid.com/)
-
 
 ## Appreciation/Shoutout
 
