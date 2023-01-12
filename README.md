@@ -57,7 +57,7 @@ To get a local copy up and running follow these simple example steps.
 
 This is an example of how to list things you need to use the software and how to install them.
 
-- npm
+#### npm
 
 ```sh
 npm install npm@latest -g
@@ -77,6 +77,19 @@ git clone https://github.com/y0dev/theora.git
 npm install
 ```
 
+3. Build Project
+
+#### For Android
+
+```sh
+eas build --profile development --platform android
+```
+
+#### For iOS
+```sh
+eas build --profile development-simulator --platform ios
+```
+
 ## Contributing
 
 ### Creating A Pull Request
@@ -91,6 +104,9 @@ npm install
 
 **Devontae Reid** - _Software Engineer_ - [Devontae Reid](https://www.devontaereid.com/)
 
-## Appreciation/Shoutout 
+
+## Appreciation/Shoutout
+
 This design was inspired by [React Native Starter Kit Template](https://instamobile.io/app-templates/react-native-starter-kit-firebase/)
+
 Thanks to [Shaan Khan](https://readme.shaankhan.dev/) for creating this readme generation tool
