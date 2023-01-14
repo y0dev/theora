@@ -63,6 +63,14 @@ This is an example of how to list things you need to use the software and how to
 npm install npm@latest -g
 ```
 
+#### eas-cli
+
+```sh
+npm install -g eas-cli
+```
+
+Must have a Expo account and logged in
+
 ### Installation
 
 1. Clone the repo
@@ -97,6 +105,11 @@ eas build --profile development --platform android
 eas build --profile development-simulator --platform ios
 ```
 
+#### Building both Android and iOS
+
+```sh
+eas build --platform all
+```
 
 ### Debug
 
