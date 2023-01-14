@@ -22,15 +22,6 @@
 
 ![Downloads](https://img.shields.io/github/downloads/y0Dev/Theora/total) ![Contributors](https://img.shields.io/github/contributors/y0Dev/Theora?color=dark-green) ![Forks](https://img.shields.io/github/forks/y0Dev/Theora?style=social) ![Stargazers](https://img.shields.io/github/stars/y0Dev/Theora?style=social)
 
-## App Designs
-
-<a href="https://github.com/y0Dev/Theora">
-	<img src="images/app_images/welcome.png" alt="welcome-screen" width="210" height="456" /></a>
-<a href="https://github.com/y0Dev/Theora">
-	<img src="images/app_images/signin.png" alt="sign-in-screen" width="210" height="456" /></a>
-<a href="https://github.com/y0Dev/Theora">
-	<img src="images/app_images/login.png" alt="login-screen" width="210" height="456" /></a>
-
 ## Table Of Contents
 
 - [About the Project](#about-the-project)
@@ -43,7 +34,14 @@
 
 ## About The Project
 
-![Screen Shot](images/screenshot.png)
+### App Designs
+
+<a href="https://github.com/y0Dev/Theora">
+	<img src="images/app_images/welcome.png" alt="welcome-screen" width="210" height="456" /></a>
+<a href="https://github.com/y0Dev/Theora">
+	<img src="images/app_images/signin.png" alt="sign-in-screen" width="210" height="456" /></a>
+<a href="https://github.com/y0Dev/Theora">
+	<img src="images/app_images/login.png" alt="login-screen" width="210" height="456" /></a>
 
 Creating a frontend design can become long and redundant. I decide to create my own so that I don't have to continue to repeat the same process. While updating as I see new designs that catch my interest.
 
