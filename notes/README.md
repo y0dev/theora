@@ -6,6 +6,7 @@ This is a folder that should contain all the notes for the project. Notes you ca
 
 - [Built With](#built-with)
   - [MacOS](#macos)
+  - [Android](#android)
 
 ## Built With
 
@@ -30,3 +31,12 @@ You would use these commands:
 git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-core fetch --unshallow
 git -C /usr/local/Homebrew/Library/Taps/homebrew/homebrew-cask fetch --unshallow
 ```
+
+### Android
+
+Download build and add to simulator
+
+<a href="https://docs.expo.dev/development/create-development-builds/">
+	<img src="https://docs.expo.dev/static/images/dev-client/android-build.jpg" alt="welcome-screen" style="max-width:700px"/></a>
+
+You can now install it on the Android Emulator by dragging .apk file into the emulator. When it's complete installing, navigate to the app launcher, find the app icon and open it.
