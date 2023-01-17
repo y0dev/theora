@@ -7,6 +7,8 @@ This is a folder that should contain all the notes for the project. Notes you ca
 - [Built With](#built-with)
   - [MacOS](#macos)
   - [Android](#android)
+- [React Native](#react-native)
+  - [Navigation](#navigation)
 
 ## Built With
 
@@ -40,3 +42,25 @@ Download build and add to simulator
 	<img src="https://docs.expo.dev/static/images/dev-client/android-build.jpg" alt="welcome-screen" style="max-width:700px"/></a>
 
 You can now install it on the Android Emulator by dragging .apk file into the emulator. When it's complete installing, navigate to the app launcher, find the app icon and open it.
+
+## React Native
+
+### Navigation
+
+#### Cleaning the Navigation Stack
+
+Information is from [React-Native Docs](https://reactnavigation.org/docs/navigation-prop/#reset)
+
+In order to clean the navigation stack and assuming you are on the screen from which you want to navigate from:
+
+If you are using ** react-navigation version v5 or newer ** you can use navigation.reset or CommonActions.reset:
+
+```javascript
+// Replace current navigation state with a new one,
+// index value will be the current active route:
+
+navigation.reset({
+  index: 0,
+  routes: [{ name: "Profile" }],
+});
+```
