@@ -144,6 +144,6 @@ npm run start
 
 ## Appreciation/Shoutout
 
-This design was inspired by [React Native Starter Kit Template](https://instamobile.io/app-templates/react-native-starter-kit-firebase/)
+This design was inspired by [Lippy](https://dribbble.com/shots/6448625-lippy/attachments) and [React Native Starter Kit Template](https://instamobile.io/app-templates/react-native-starter-kit-firebase/)
 
 Thanks to [Shaan Khan](https://readme.shaankhan.dev/) for creating this readme generation tool

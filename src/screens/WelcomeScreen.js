@@ -14,9 +14,8 @@ import {
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import {useDispatch} from 'react-redux';
 // import {login} from '../reducers';
-import {AppStyles, Colors} from '../AppStyles';
-import { BackgroundView } from '../components/BackgroundView';
-import { Square } from '../components/Shapes';
+import { AppStyles, Colors } from '../AppStyles';
+import {app_title} from '../AppDetails.json'
 
 // const WelcomeScreen = ({navigation}) => {
 //   return <Text>This is WelcomeScreen</Text>;
@@ -117,8 +116,10 @@ function WelcomeScreen({navigation}) {
   // }
   return (
     <View style={styles.containers.main}>
-      <BackgroundView/>
-      <Text style={styles.title}>Say hello to your new app</Text>
+      <View style={styles.containers.title}>
+        <Text style={styles.title}>{app_title}</Text>
+      </View>
+      <View style={styles.containers.buttons}>
         <TouchableOpacity
           style={styles.containers.login}
           onPress={() => navigation.navigate('Login')}>
@@ -129,6 +130,8 @@ function WelcomeScreen({navigation}) {
           onPress={() => navigation.navigate('Signup')}>
           <Text style={styles.signupText}>Sign Up</Text>
         </TouchableOpacity>
+
+      </View>
     </View>
   );
 }
@@ -139,25 +142,26 @@ const styles = StyleSheet.create({
       width: "100%",
       height: "100%",
       alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 150,
-    },
-    components: {
+      justifyContent: 'space-between',
       flex: 1,
+      backgroundColor: AppStyles.color.background,
+    },
+    title: {
       alignItems: 'center',
-      justifyContent: 'center',
-      marginBottom: 150,
+      justifyContent: 'flex-end',
+      height: Dimensions.get('window').height / 2,
+      width: "100%",
+      backgroundColor: Colors.lightGrayYellow,
+      marginBottom: 50,
     },
     login: {
       alignItems: 'center',
       width: AppStyles.buttonWidth.main,
-      backgroundColor: Colors.yellow,
+      backgroundColor: AppStyles.color.primary,
       borderRadius: AppStyles.borderRadius.main,
       padding: 10,
-      marginTop: 30,
-      position: 'absolute',
-      left:     "15%",
-      top:      "50%",
+      width: Dimensions.get('window').width / 1.5,
+      // marginTop: 30,
     },
     signup: {
       alignItems: 'center',
@@ -165,12 +169,16 @@ const styles = StyleSheet.create({
       backgroundColor: Colors.white,
       borderRadius: AppStyles.borderRadius.main,
       padding: 8,
-      borderWidth: 1,
-      borderColor: Colors.yellow,
+      borderWidth: 3,
+      borderColor: AppStyles.color.primary,
+      width: Dimensions.get('window').width / 1.5,
       marginTop: 15,
-      position: 'absolute',
-      left:     "15%",
-      top:      "60%",
+    },
+    buttons: {
+      height: "50%",
+      alignItems: 'center',
+      justifyContent: 'flex-start',
+      flex: 1,
     }
   },
   logo: {
@@ -180,21 +188,20 @@ const styles = StyleSheet.create({
   title: {
     fontSize: AppStyles.fontSize.title,
     fontWeight: 'bold',
-    color: Colors.yellow,
+    color: AppStyles.color.primary,
     marginTop: 20,
     textAlign: 'center',
     marginBottom: 20,
     marginLeft: 20,
     marginRight: 20,
-    position: 'absolute',
-    left:     0,
-    top:      "30%",
   },
   loginText: {
     color: Colors.white,
+    fontSize: 17,
   },
   signupText: {
-    color: Colors.yellow,
+    color: AppStyles.color.primary,
+    fontSize: 17,
   },
   spinner: {
     marginTop: 200,

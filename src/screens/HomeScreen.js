@@ -1,7 +1,7 @@
 import React, {useLayoutEffect, useState} from 'react';
 import {ScrollView, StyleSheet, Text, TextInput} from 'react-native';
 import {connect, useSelector} from 'react-redux';
-import { AppStyles} from '../AppStyles';
+import { AppStyles, TextStyle} from '../AppStyles';
 import { Configuration } from '../Configuration';
 import {app_title} from '../AppDetails.json';
 
@@ -18,9 +18,9 @@ function HomeScreen({ navigation }) {
 
   return (
     <ScrollView style={styles.container}>
-      <Text style={styles.title}>Welcome {'User'}</Text>
+      <Text style={TextStyle.title}>Welcome {'User'}</Text>
       <TextInput
-          style={styles.body}
+          style={TextStyle.body}
           placeholder="Link to pdf or html"
           // onChangeText={setEmail}
           value={link}
@@ -36,11 +36,6 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     flex: 1,
     padding: Configuration.home.listing_item.offset,
-  },
-  title: {
-    fontWeight: 'bold',
-    color: AppStyles.color.title,
-    fontSize: 25,
   },
   userPhoto: {
     width: 40,

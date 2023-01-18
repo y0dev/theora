@@ -10,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 // import Button from 'react-native-button';
-import {AppStyles, Colors} from '../AppStyles';
+import {AppStyles, Colors, ContainerStyles, TextStyle} from '../AppStyles';
 // import firebase from '@react-native-firebase/app';
 // import auth from '@react-native-firebase/auth';
 // import firestore from '@react-native-firebase/firestore';
@@ -183,10 +183,10 @@ function LoginScreen({navigation}) {
 
   return (
     <View style={styles.container}>
-      <Text style={[styles.title, styles.leftTitle]}>Sign In</Text>
-      <View style={styles.InputContainer}>
+      <Text style={[TextStyle.title, TextStyle.leftTitle]}>Sign In</Text>
+      <View style={ContainerStyles.textInput}>
         <TextInput
-          style={styles.body}
+          style={TextStyle.body}
           placeholder="E-mail or phone number"
           onChangeText={setEmail}
           value={email}
@@ -194,9 +194,9 @@ function LoginScreen({navigation}) {
           underlineColorAndroid="transparent"
         />
       </View>
-      <View style={styles.InputContainer}>
+      <View style={ContainerStyles.textInput}>
         <TextInput
-          style={styles.body}
+          style={TextStyle.body}
           secureTextEntry={true}
           placeholder="Password"
           onChangeText={setPassword}
@@ -206,15 +206,15 @@ function LoginScreen({navigation}) {
         />
       </View>
       <TouchableOpacity
-        style={styles.loginContainer}
+        style={ContainerStyles.login}
         onPress={() => onPressLogin()}>
-        <Text style={styles.loginText}>Log in</Text>
+        <Text style={TextStyle.buttonText}>Log in</Text>
       </TouchableOpacity>
-      <Text style={styles.or}>OR</Text>
+      <Text style={TextStyle.or}>OR</Text>
       <TouchableOpacity
-        style={styles.facebookContainer}
+        style={ContainerStyles.facebook}
         onPress={() => onPressFacebook()}>
-        <Text style={styles.facebookText}>Login with Facebook</Text>
+        <Text style={TextStyle.facebook}>Login with Facebook</Text>
       </TouchableOpacity>
       {/* {loading ? (
         <ActivityIndicator
@@ -239,78 +239,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    backgroundColor: Colors.lightYellow,
-  },
-  or: {
-    color: 'black',
-    marginTop: 40,
-    marginBottom: 10,
-  },
-  title: {
-    fontSize: AppStyles.fontSize.title,
-    fontWeight: 'bold',
-    color: AppStyles.color.primary,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  leftTitle: {
-    alignSelf: 'stretch',
-    textAlign: 'left',
-    marginLeft: 20,
-  },
-  content: {
-    paddingLeft: 50,
-    paddingRight: 50,
-    textAlign: 'center',
-    fontSize: AppStyles.fontSize.content,
-    color: AppStyles.color.text,
-  },
-  loginContainer: {
-    alignItems: 'center',
-    width: AppStyles.buttonWidth.main,
-    backgroundColor: AppStyles.color.secondary,
-    borderRadius: AppStyles.borderRadius.main,
-    padding: 10,
-    marginTop: 30,
-  },
-  loginText: {
-    color: Colors.white,
-  },
-  placeholder: {
-    color: 'red',
-  },
-  InputContainer: {
-    width: AppStyles.textInputWidth.main,
-    marginTop: 30,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: Colors.grey,
-    borderRadius: AppStyles.borderRadius.main,
-  },
-  body: {
-    height: 42,
-    paddingLeft: 20,
-    paddingRight: 20,
-    color: AppStyles.color.text,
-  },
-  facebookContainer: {
-    alignItems: 'center',
-    width: 192,
-    backgroundColor: AppStyles.color.facebook,
-    borderRadius: AppStyles.borderRadius.main,
-    padding: 10,
-    marginTop: 30,
-  },
-  facebookText: {
-    color: Colors.white,
-  },
-  googleContainer: {
-    width: 192,
-    height: 48,
-    marginTop: 30,
-  },
-  googleText: {
-    color: Colors.white,
+    backgroundColor: AppStyles.color.background,
   },
 });
 
