@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {Alert, StyleSheet, Text, TextInput, View, TouchableOpacity} from 'react-native';
 // import Button from 'react-native-button';
-import {AppStyles} from '../AppStyles';
+import {AppStyles, Colors} from '../AppStyles';
 // import firestore from '@react-native-firebase/firestore';
 // import auth from '@react-native-firebase/auth';
 // import {useDispatch} from 'react-redux';
@@ -49,119 +49,110 @@ function SignupScreen({navigation}) {
   };
 
   return (
-    <View style={styles.container}>
-      <Text style={[styles.title, styles.leftTitle]}>Create new account</Text>
-      <View style={styles.InputContainer}>
+    <View style={styles.containers.main}>
+      <Text style={[styles.text.title, styles.text.leftTitle]}>Create new account</Text>
+      <View style={styles.containers.textInput}>
         <TextInput
           style={styles.body}
           placeholder="Full Name"
           onChangeText={setFullname}
           value={fullname}
-          placeholderTextColor={AppStyles.color.grey}
+          placeholderTextColor={AppStyles.color.placeholder}
           underlineColorAndroid="transparent"
         />
       </View>
-      <View style={styles.InputContainer}>
+      <View style={styles.containers.textInput}>
         <TextInput
           style={styles.body}
           placeholder="Phone Number"
           onChangeText={setPhone}
           value={phone}
-          placeholderTextColor={AppStyles.color.grey}
+          placeholderTextColor={AppStyles.color.placeholder}
           underlineColorAndroid="transparent"
         />
       </View>
-      <View style={styles.InputContainer}>
+      <View style={styles.containers.textInput}>
         <TextInput
           style={styles.body}
           placeholder="E-mail Address"
           onChangeText={setEmail}
           value={email}
-          placeholderTextColor={AppStyles.color.grey}
+          placeholderTextColor={AppStyles.color.placeholder}
           underlineColorAndroid="transparent"
         />
       </View>
-      <View style={styles.InputContainer}>
+      <View style={styles.containers.textInput}>
         <TextInput
           style={styles.body}
           placeholder="Password"
           secureTextEntry={true}
           onChangeText={setPassword}
           value={password}
-          placeholderTextColor={AppStyles.color.grey}
+          placeholderTextColor={AppStyles.color.placeholder}
           underlineColorAndroid="transparent"
         />
       </View>
       <TouchableOpacity
-        style={[styles.facebookContainer, {marginTop: 50}]}
+        style={[styles.containers.signup, {marginTop: 50}]}
         onPress={() => onRegister()}>
-        <Text style={styles.facebookText}>Sign Up</Text>
+        <Text style={styles.text.buttonText}>Sign Up</Text>
       </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
+  containers: {
+    main: {
+      flex: 1,
+      alignItems: 'center',
+    },
+    signup: {
+      alignItems: 'center',
+      width: AppStyles.buttonWidth.main,
+      backgroundColor: AppStyles.color.primary,
+      borderRadius: AppStyles.borderRadius.main,
+      padding: 10,
+      marginTop: 30,
+    },
+    textInput: {
+      width: AppStyles.textInputWidth.main,
+      marginTop: 30,
+      borderWidth: 1,
+      borderStyle: 'solid',
+      borderColor: Colors.grey,
+      borderRadius: AppStyles.borderRadius.main,
+    }
   },
-  title: {
-    fontSize: AppStyles.fontSize.title,
-    fontWeight: 'bold',
-    color: AppStyles.color.tint,
-    marginTop: 20,
-    marginBottom: 20,
-  },
-  leftTitle: {
-    alignSelf: 'stretch',
-    textAlign: 'left',
-    marginLeft: 20,
-  },
-  content: {
-    paddingLeft: 50,
-    paddingRight: 50,
-    textAlign: 'center',
-    fontSize: AppStyles.fontSize.content,
-    color: AppStyles.color.text,
-  },
-  loginContainer: {
-    width: AppStyles.buttonWidth.main,
-    backgroundColor: AppStyles.color.tint,
-    borderRadius: AppStyles.borderRadius.main,
-    padding: 10,
-    marginTop: 30,
-  },
-  loginText: {
-    color: AppStyles.color.white,
-  },
-  placeholder: {
-    color: 'red',
-  },
-  InputContainer: {
-    width: AppStyles.textInputWidth.main,
-    marginTop: 30,
-    borderWidth: 1,
-    borderStyle: 'solid',
-    borderColor: AppStyles.color.grey,
-    borderRadius: AppStyles.borderRadius.main,
+  text: {
+    title: {
+      fontSize: AppStyles.fontSize.title,
+      fontWeight: 'bold',
+      color: AppStyles.color.primary,
+      marginTop: 20,
+      marginBottom: 20,
+    },
+    leftTitle: {
+      alignSelf: 'stretch',
+      textAlign: 'left',
+      marginLeft: 20,
+    },
+    content: {
+      paddingLeft: 50,
+      paddingRight: 50,
+      textAlign: 'center',
+      fontSize: AppStyles.fontSize.content,
+      color: AppStyles.color.text,
+    },
+    buttonText: {
+      color: Colors.white,
+    },
   },
   body: {
     height: 42,
     paddingLeft: 20,
     paddingRight: 20,
     color: AppStyles.color.text,
-  },
-  facebookContainer: {
-    alignItems: 'center',
-    width: AppStyles.buttonWidth.main,
-    backgroundColor: AppStyles.color.tint,
-    borderRadius: AppStyles.borderRadius.main,
-    padding: 10,
-    marginTop: 30,
-  },
-  facebookText: {
-    color: AppStyles.color.white,
   },
 });
 

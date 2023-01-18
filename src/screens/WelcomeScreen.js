@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {
   ActivityIndicator,
+  Dimensions,
   Text,
   View,
   StyleSheet,
@@ -13,7 +14,9 @@ import {
 // import AsyncStorage from '@react-native-async-storage/async-storage';
 // import {useDispatch} from 'react-redux';
 // import {login} from '../reducers';
-import {AppStyles} from '../AppStyles';
+import {AppStyles, Colors} from '../AppStyles';
+import { BackgroundView } from '../components/BackgroundView';
+import { Square } from '../components/Shapes';
 
 // const WelcomeScreen = ({navigation}) => {
 //   return <Text>This is WelcomeScreen</Text>;
@@ -113,28 +116,62 @@ function WelcomeScreen({navigation}) {
   //   );
   // }
   return (
-    <View style={styles.container}>
+    <View style={styles.containers.main}>
+      <BackgroundView/>
       <Text style={styles.title}>Say hello to your new app</Text>
-      <TouchableOpacity
-        style={styles.loginContainer}
-        onPress={() => navigation.navigate('Login')}>
-        <Text style={styles.loginText}>Log In</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.signupContainer}
-        onPress={() => navigation.navigate('Signup')}>
-        <Text style={styles.signupText}>Sign Up</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containers.login}
+          onPress={() => navigation.navigate('Login')}>
+          <Text style={styles.loginText}>Log In</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.containers.signup}
+          onPress={() => navigation.navigate('Signup')}>
+          <Text style={styles.signupText}>Sign Up</Text>
+        </TouchableOpacity>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginBottom: 150,
+  containers: {
+    main: {
+      width: "100%",
+      height: "100%",
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 150,
+    },
+    components: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 150,
+    },
+    login: {
+      alignItems: 'center',
+      width: AppStyles.buttonWidth.main,
+      backgroundColor: Colors.yellow,
+      borderRadius: AppStyles.borderRadius.main,
+      padding: 10,
+      marginTop: 30,
+      position: 'absolute',
+      left:     "15%",
+      top:      "50%",
+    },
+    signup: {
+      alignItems: 'center',
+      width: AppStyles.buttonWidth.main,
+      backgroundColor: Colors.white,
+      borderRadius: AppStyles.borderRadius.main,
+      padding: 8,
+      borderWidth: 1,
+      borderColor: Colors.yellow,
+      marginTop: 15,
+      position: 'absolute',
+      left:     "15%",
+      top:      "60%",
+    }
   },
   logo: {
     width: 200,
@@ -143,36 +180,21 @@ const styles = StyleSheet.create({
   title: {
     fontSize: AppStyles.fontSize.title,
     fontWeight: 'bold',
-    color: AppStyles.color.tint,
+    color: Colors.yellow,
     marginTop: 20,
     textAlign: 'center',
     marginBottom: 20,
     marginLeft: 20,
     marginRight: 20,
-  },
-  loginContainer: {
-    alignItems: 'center',
-    width: AppStyles.buttonWidth.main,
-    backgroundColor: AppStyles.color.tint,
-    borderRadius: AppStyles.borderRadius.main,
-    padding: 10,
-    marginTop: 30,
+    position: 'absolute',
+    left:     0,
+    top:      "30%",
   },
   loginText: {
-    color: AppStyles.color.white,
-  },
-  signupContainer: {
-    alignItems: 'center',
-    width: AppStyles.buttonWidth.main,
-    backgroundColor: AppStyles.color.white,
-    borderRadius: AppStyles.borderRadius.main,
-    padding: 8,
-    borderWidth: 1,
-    borderColor: AppStyles.color.tint,
-    marginTop: 15,
+    color: Colors.white,
   },
   signupText: {
-    color: AppStyles.color.tint,
+    color: Colors.yellow,
   },
   spinner: {
     marginTop: 200,

@@ -13,6 +13,8 @@ import {Configuration} from '../Configuration';
 import DrawerContainer from '../components/DrawerContainer';
 
 const Stack = createStackNavigator();
+const BottomTab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 // login stack
 const LoginStack = () => (
@@ -20,10 +22,13 @@ const LoginStack = () => (
     initialRouteName="Welcome"
     screenOptions={{
       headerTintColor: 'red',
-      headerTitleStyle: styles.headerTitleStyle,
+      headerTitleAlign: 'center',
+      headerTitleStyle: styles.header.titleStyle,
       headerMode: 'float',
     }}>
-    <Stack.Screen name="Welcome" component={WelcomeScreen} />
+    <Stack.Screen name="Welcome" options={{
+      headerShown: false
+    }} component={WelcomeScreen} />
     <Stack.Screen name="Login" component={LoginScreen} />
     <Stack.Screen name="Signup" component={SignupScreen} />
     
@@ -34,14 +39,14 @@ const HomeStack = () => (
   <Stack.Navigator
     initialRouteName="Home"
     screenOptions={{
-      headerTintColor: 'red',
-      headerTitleStyle: styles.headerTitleStyle,
+      headerTitleAlign: 'center',
+      headerTitleStyle: styles.header.titleStyle,
       headerMode: 'float',
     }}>
     <Stack.Screen
       name="Home"
       component={HomeScreen}
-      options={({navigation}) => ({
+      options={({ navigation }) => ({
         headerRight: () => (
           <Pressable onPress={() => navigation.openDrawer() }>
             <Image style={styles.iconStyle} source={AppIcon.images.menu} />
@@ -53,19 +58,18 @@ const HomeStack = () => (
   </Stack.Navigator>
 );
 
-const BottomTab = createBottomTabNavigator();
 
 const TabNavigator = () => (
   <BottomTab.Navigator
     initialRouteName="Home"
     screenOptions={{
       tabBarInactiveTintColor: 'grey',
-      tabBarActiveTintColor: AppStyles.color.tint,
+      tabBarActiveTintColor: AppStyles.color.primary,
       tabBarIcon: ({focused}) => {
         return (
           <Image
             style={{
-              tintColor: focused ? AppStyles.color.tint : AppStyles.color.grey,
+              tintColor: focused ? AppStyles.color.primary : AppStyles.color.grey,
             }}
             source={AppIcon.images.home}
           />
@@ -81,8 +85,7 @@ const TabNavigator = () => (
   </BottomTab.Navigator>
 );
 
-// drawer stack
-const Drawer = createDrawerNavigator();
+
 const DrawerStack = () => (
   <Drawer.Navigator
     screenOptions={{
@@ -113,14 +116,20 @@ const AppNavigator = () => (
   </NavigationContainer>
 );
 
+
+const navOptions = {
+
+}
+
 const styles = StyleSheet.create({
-  headerTitleStyle: {
-    fontWeight: 'bold',
-    textAlign: 'center',
-    alignSelf: 'center',
-    color: 'black',
+  header: {
+    titleStyle: {
+      fontWeight: 'bold',
+      textAlign: 'center',
+      color: 'black'
+    }
   },
-  iconStyle: {tintColor: AppStyles.color.tint, width: 30, height: 30},
+  iconStyle: {tintColor: AppStyles.color.primary, width: 30, height: 30},
 });
 
 

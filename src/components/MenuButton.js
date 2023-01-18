@@ -3,7 +3,6 @@ import {Image, StyleSheet, Text, TouchableHighlight, View} from 'react-native';
 import {AppStyles} from '../AppStyles';
 
 export default function MenuButton(props) {
-  console.log('Menu Button Pressed')
   return (
     <TouchableHighlight
       onPress={props.onPress}

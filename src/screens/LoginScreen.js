@@ -1,3 +1,4 @@
+import { StackActions, NavigationActions } from '@react-navigation/native';
 import React, {useEffect, useState} from 'react';
 import {
   StyleSheet,
@@ -9,7 +10,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 // import Button from 'react-native-button';
-import {AppStyles} from '../AppStyles';
+import {AppStyles, Colors} from '../AppStyles';
 // import firebase from '@react-native-firebase/app';
 // import auth from '@react-native-firebase/auth';
 // import firestore from '@react-native-firebase/firestore';
@@ -43,6 +44,13 @@ function LoginScreen({navigation}) {
       Alert.alert('Please fill out the required fields.');
       return;
     }
+
+    // Reset the drawer stack
+    navigation.reset({
+      index: 0,
+      routes: [{ name: 'DrawerStack' }],
+    });
+    
     // auth()
     //   .signInWithEmailAndPassword(email, password)
     //   .then((response) => {
@@ -182,7 +190,7 @@ function LoginScreen({navigation}) {
           placeholder="E-mail or phone number"
           onChangeText={setEmail}
           value={email}
-          placeholderTextColor={AppStyles.color.grey}
+          placeholderTextColor={Colors.grey}
           underlineColorAndroid="transparent"
         />
       </View>
@@ -193,7 +201,7 @@ function LoginScreen({navigation}) {
           placeholder="Password"
           onChangeText={setPassword}
           value={password}
-          placeholderTextColor={AppStyles.color.grey}
+          placeholderTextColor={Colors.grey}
           underlineColorAndroid="transparent"
         />
       </View>
@@ -231,6 +239,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
+    backgroundColor: Colors.lightYellow,
   },
   or: {
     color: 'black',
@@ -240,7 +249,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: AppStyles.fontSize.title,
     fontWeight: 'bold',
-    color: AppStyles.color.tint,
+    color: AppStyles.color.primary,
     marginTop: 20,
     marginBottom: 20,
   },
@@ -259,13 +268,13 @@ const styles = StyleSheet.create({
   loginContainer: {
     alignItems: 'center',
     width: AppStyles.buttonWidth.main,
-    backgroundColor: AppStyles.color.tint,
+    backgroundColor: AppStyles.color.secondary,
     borderRadius: AppStyles.borderRadius.main,
     padding: 10,
     marginTop: 30,
   },
   loginText: {
-    color: AppStyles.color.white,
+    color: Colors.white,
   },
   placeholder: {
     color: 'red',
@@ -275,7 +284,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     borderWidth: 1,
     borderStyle: 'solid',
-    borderColor: AppStyles.color.grey,
+    borderColor: Colors.grey,
     borderRadius: AppStyles.borderRadius.main,
   },
   body: {
@@ -293,7 +302,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   facebookText: {
-    color: AppStyles.color.white,
+    color: Colors.white,
   },
   googleContainer: {
     width: 192,
@@ -301,7 +310,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
   googleText: {
-    color: AppStyles.color.white,
+    color: Colors.white,
   },
 });
 

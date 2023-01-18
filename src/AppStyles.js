@@ -5,47 +5,65 @@ const { width, height } = Dimensions.get("window");
 const SCREEN_WIDTH = width < height ? width : height;
 const numColumns = 2;
 
+export const Colors = {
+  facebookBlue: "#4267B2",
+  blue: "#3293FE",
+  black:"#161616",
+  white: "white",
+  darkGreen: "#5EA23A",
+  darkGray1: "#A0A0A0",
+  darkGray2: "#8A8A8A",
+  darkGray3: "#696969",
+  darkGray4: "#545454",
+  darkGray5: "#464646",
+  grey: "grey",
+  gray: "#BBBBBB",
+  lightGray: "#F2F2F2",
+  greenBlue: "#00AEA8",
+  purple: "#C780FA",
+  lightPurple: "#E3ACF9",
+  yellow: "#FADA9D",
+  lightYellow: "#FBF1D3", // https://colorhunt.co/palette/c780fae3acf9fada9dfbf1d3
+  lightRed: "#FF5A66",
+}
+
 export const AppStyles = {
-    // System Colors
-    color: {
-        main: "#5ea23a",
-        text: "#696969",
-        title: "#464646",
-        subtitle: "#545454",
-        categoryTitle: "#161616",
-        tint: "#ff5a66",
-        description: "#bbbbbb",
-        filterTitle: "#8a8a8a",
-        starRating: "#2bdf85",
-        location: "#a9a9a9",
-        white: "white",
-        facebook: "#4267b2",
-        grey: "grey",
-        greenBlue: "#00aea8",
-        placeholder: "#a0a0a0",
-        background: "#f2f2f2",
-        blue: "#3293fe"
-    },
-    fontSize: {
-        title: 30,
-        content: 20,
-        normal: 16
-    },
-    buttonWidth: {
-        main: "70%" 
-    },
-    textInputWidth: {
-        main: "80%"
-    },
-    borderRadius: {
-        main: 25,
-        small: 5
-    }
+  // System Colors
+  color: {
+    primary: Colors.purple,
+    secondary: Colors.lightPurple,
+    main: Colors.darkGreen,
+    text: Colors.darkGray3,
+    title: Colors.darkGray5,
+    subtitle: Colors.darkGray4,
+    categoryTitle: Colors.black,
+    tint: Colors.lightRed,
+    description: Colors.gray,
+    filterTitle: Colors.darkGray2,
+    facebook: Colors.facebookBlue,
+    placeholder: Colors.darkGray1,
+    background: Colors.lightGray,
+  },
+  fontSize: {
+    title: 30,
+    content: 20,
+    normal: 16
+  },
+  buttonWidth: {
+      main: "70%" 
+  },
+  textInputWidth: {
+      main: "80%"
+  },
+  borderRadius: {
+      main: 15,
+      small: 5
+  }
 };
 
 export const AppIcon = {
   container: {
-    backgroundColor: "white",
+    backgroundColor: Colors.white,
     borderRadius: 20,
     padding: 8,
     marginRight: 10

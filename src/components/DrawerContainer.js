@@ -16,6 +16,11 @@ export default function DrawerContainer({navigation}) {
           source={AppIcon.images.logout}
           onPress={() => {
             console.log('This should log out');
+            // Reset the drawer stack
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'LoginStack' }],
+            });
             // auther()
             //   .signOut()
             //   .then(() => {
